@@ -1,17 +1,32 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import './App.css'
+// frontend\src\App.tsx
+
+import Navbar from "./layout/Navbar";
+import About from "./sections/About";
+import Contact from "./sections/Contact";
+import Experience from "./sections/Experience";
+import Hero from "./sections/Hero";
+import Projects from "./sections/Projects";
+import Testimonials from "./sections/Testimonials";
+
 
 function App() {
 
+
   return (
     <>
-      <div className='container bg-red-500 w-screen h-screen'>
-        get kicks things off.
+      <div className='min-h-dvh overflow-x-hidden'>
+        <Navbar />
+        <main>
+          {/* <Hero />
+          <About />
+          <Projects />
+          <Experience />
+          <Testimonials />
+          <Contact /> */}
+        </main>
       </div>
     </>
   )
 }
 
-export default App
+export default App;
