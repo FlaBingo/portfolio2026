@@ -16,7 +16,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOption] = useState(false);
   
   return (
-    <header className="fixed top-0 left-0 right-0 py-5 bg-transparent">
+    <header className="fixed top-0 left-0 right-0 py-5 bg-transparent z-50">
       <nav className="container mx-auto px-6 flex items-center justify-between">
         <a
           href="#"
