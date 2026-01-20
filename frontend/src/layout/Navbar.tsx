@@ -13,7 +13,7 @@ const navLinks = [
 
 const Navbar = () => {
 
-  const [isMobileMenuOpen, setIsMobileMenuOption] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
@@ -57,7 +57,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <Button className="md:hidden rounded-full p-2 text-foreground bg-background cursor-pointer" onClick={() => setIsMobileMenuOption((prev) => !prev)}>
+        <Button className="md:hidden rounded-full p-2 text-foreground bg-background cursor-pointer" onClick={() => setIsMobileMenuOpen((prev) => !prev)}>
           {isMobileMenuOpen ? <X size={24}/> : <Menu size={24} />}
         </Button>
       </nav>
@@ -69,12 +69,18 @@ const Navbar = () => {
             <a
               href={link.href}
               key={index}
+              onClick={() => setIsMobileMenuOpen(false)}
               className="text-lg text-muted-foreground hover:text-foreground py-2"
             >
               {link.label}
             </a>
           ))}
-          <Button className="rounded-full">Contact Me</Button>
+          <Button
+            className="rounded-full"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Contact Me
+          </Button>
         </div>
       </div>)}
     </header>
