@@ -152,10 +152,10 @@ const Hero = () => {
           <div className="relative animate-fade-in animation-delay-300">
             {/* Profile Image */}
             <div className="relative max-w-md mx-auto">
-              <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" style={{borderRadius: "2rem"}}/>
+              <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" style={{borderRadius: "1.5rem"}}/>
               <div className="relative glass rounded-3xl p-2 glow-border" style={{ borderRadius: "1.5rem" }}>
                 <img
-                  src="./profile_image.png"
+                  src="./profile_image1.png"
                   alt="Satyam Prajapati"
                   className="w-full aspect-4/5 object-cover rounded-2xl"
                   style={{ borderRadius: "1rem" }}
@@ -204,7 +204,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800 z-50">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800 z-20">
         <a
           href="#about"
           className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
