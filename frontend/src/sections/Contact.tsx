@@ -49,7 +49,7 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     setIsLoading(true);
@@ -86,7 +86,7 @@ const Contact = () => {
       setSubmitStatus({
         type: "error",
         message:
-          error.text || "Failed to send message. Please try again Later.",
+          (error as Error).message || "Failed to send message. Please try again Later.",
       });
     } finally {
       setIsLoading(false);
