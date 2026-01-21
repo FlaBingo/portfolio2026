@@ -1,5 +1,6 @@
 // frontend\src\App.tsx
 
+import { Toaster } from "./components/ui/sonner";
 import Footer from "./layout/Footer";
 import Navbar from "./layout/Navbar";
 import About from "./sections/About";
@@ -9,9 +10,7 @@ import Hero from "./sections/Hero";
 import Projects from "./sections/Projects";
 import Testimonials from "./sections/Testimonials";
 
-
 function App() {
-
 
   return (
     <>
@@ -27,6 +26,7 @@ function App() {
         </main>
         <Footer />
       </div>
+      <Toaster />
     </>
   )
 }
