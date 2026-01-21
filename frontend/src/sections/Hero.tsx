@@ -1,15 +1,12 @@
 // frontend\src\sections\Hero.tsx
 // import ReactLogo from '../assets/react.svg'; // Add ?react suffix
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
-import { GFGLogo } from "@/components/GFGLogo";
 import { Button } from "@/components/ui/button";
+import { socialLinks } from "@/lib/socialLinks";
 import {
   ArrowRight,
   ChevronDown,
   Download,
-  Github,
-  Linkedin,
-  Twitter,
 } from "lucide-react";
 import { useMemo } from "react";
 
@@ -50,11 +47,15 @@ const skills = [
   "GitHub Actions",
 ];
 
+
 const Hero = () => {
   const dots = useMemo(() => generateDots(), []);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center overflow-hidden"
+    >
       {/* Bg */}
       <div className="absolute inset-0">
         <img
@@ -111,8 +112,10 @@ const Hero = () => {
             </div>
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button className="rounded-full" size={"lg"}>
-                Contact Me <ArrowRight className="w-5 h-5" />
+              <Button className="rounded-full" size={"lg"} asChild>
+                <a href="mailto:satyamm1402@gmail.com">
+                  Contact Me <ArrowRight className="w-5 h-5" />
+                </a>
               </Button>
               <AnimatedBorderButton>
                 <Download className="w-5 h-5" />
@@ -123,18 +126,7 @@ const Hero = () => {
             {/* Social Links */}
             <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
               <span className="text-sm text-muted-foreground">Follow me: </span>
-              {[
-                { icon: Github, href: "https://github.com/flabingo" },
-                {
-                  icon: Linkedin,
-                  href: "https://linkedin.com/in/satyam-prajapati-m",
-                },
-                { icon: Twitter, href: "" },
-                {
-                  icon: GFGLogo,
-                  href: "https://www.geeksforgeeks.org/profile/flabingo",
-                },
-              ].map((social, idx) => (
+              {socialLinks.map((social, idx) => (
                 <a
                   key={idx}
                   href={social.href}
@@ -152,8 +144,14 @@ const Hero = () => {
           <div className="relative animate-fade-in animation-delay-300">
             {/* Profile Image */}
             <div className="relative max-w-md mx-auto">
-              <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" style={{borderRadius: "1.5rem"}}/>
-              <div className="relative glass rounded-3xl p-2 glow-border" style={{ borderRadius: "1.5rem" }}>
+              <div
+                className="absolute inset-0 rounded-3xl bg-linear-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse"
+                style={{ borderRadius: "1.5rem" }}
+              />
+              <div
+                className="relative glass rounded-3xl p-2 glow-border"
+                style={{ borderRadius: "1.5rem" }}
+              >
                 <img
                   src="./profile_image1.png"
                   alt="Satyam Prajapati"
@@ -174,7 +172,10 @@ const Hero = () => {
                   </div>
                 </div>
                 {/* Stats Badge */}
-                <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500" style={{ borderRadius: ".5rem" }}>
+                <div
+                  className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500"
+                  style={{ borderRadius: ".5rem" }}
+                >
                   <div className="text-2xl font-bold text-primary">1+</div>
                   <div className="text-xs text-muted-foreground">
                     Years Exp.
