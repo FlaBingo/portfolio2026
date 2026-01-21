@@ -54,7 +54,7 @@ const Hero = () => {
   const dots = useMemo(() => generateDots(), []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Bg */}
       <div className="absolute inset-0">
         <img
@@ -175,7 +175,7 @@ const Hero = () => {
                 </div>
                 {/* Stats Badge */}
                 <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500" style={{ borderRadius: ".5rem" }}>
-                  <div className="text-2xl font-bold text-primary">5+</div>
+                  <div className="text-2xl font-bold text-primary">1+</div>
                   <div className="text-xs text-muted-foreground">
                     Years Exp.
                   </div>
@@ -204,7 +204,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800 z-50">
         <a
           href="#about"
           className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"

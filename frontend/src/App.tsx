@@ -1,8 +1,9 @@
 // frontend\src\App.tsx
 
+import Footer from "./layout/Footer";
 import Navbar from "./layout/Navbar";
 import About from "./sections/About";
-// import Contact from "./sections/Contact";
+import Contact from "./sections/Contact";
 import Experience from "./sections/Experience";
 import Hero from "./sections/Hero";
 import Projects from "./sections/Projects";
@@ -22,8 +23,9 @@ function App() {
           <Projects />
           <Experience />
           <Testimonials />
-          {/* <Contact /> */}
+          <Contact />
         </main>
+        <Footer />
       </div>
     </>
   )

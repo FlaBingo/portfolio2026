@@ -31,7 +31,7 @@ const Navbar = () => {
       <nav className="container mx-auto px-6 flex items-center justify-between">
         <a
           href="#"
-          className="font-bold text-xl tracking-tight hover:text-primary"
+          className="font-bold text-xl tracking-tight hover:text-primary transition-colors"
         >
           SP<span className="text-primary text-2xl">.</span>
         </a>
@@ -53,7 +53,7 @@ const Navbar = () => {
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <Button className="rounded-full cursor-pointer">Contact Me</Button>
+          <Button className="rounded-full cursor-pointer" asChild><a href="#contact">Contact Me</a></Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -78,8 +78,9 @@ const Navbar = () => {
           <Button
             className="rounded-full"
             onClick={() => setIsMobileMenuOpen(false)}
+            asChild
           >
-            Contact Me
+            <a href="#contact">Contact Me</a>
           </Button>
         </div>
       </div>)}

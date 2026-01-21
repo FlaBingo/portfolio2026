@@ -1,4 +1,4 @@
-export const GFGLogo = () => {
+export const GFGLogo = ({className}: {className?: string;}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -7,6 +7,7 @@ export const GFGLogo = () => {
       width="34"
       height="34"
       viewBox="0 0 48 48"
+      className={className}
     >
       <path
         fill="currentColor"
