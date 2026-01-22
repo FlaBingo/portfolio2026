@@ -1,6 +1,10 @@
 // frontend\src\sections\Projects.tsx
 
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+import {
+  handleExtensionNotDeployed,
+  handlePendingWork,
+} from "@/lib/devProgress";
 import { ArrowUpRight, Github } from "lucide-react";
 
 const projects = [
@@ -8,12 +12,70 @@ const projects = [
     title: "Product Saver",
     description:
       "Never lose track of your wishlist items again. Save product photos, details, prices, and purchase links in one place to buy when you're ready.",
-    image: "./productsaver_screenshot.png",
-    tags: ["Javascript", "MERN", "Tailwind", "Nodemailer", "Zustand", "Axios"],
+    image: "./projects/productsaver_screenshot.png",
+    tags: [
+      "Javascript",
+      "MERN",
+      "CSS",
+      "REST",
+      "Nodemailer",
+      "Zustand",
+      "Axios",
+    ],
     link: "https://product-store-frontend-six.vercel.app/",
     github: "https://github.com/FlaBingo/productStore",
-    startTime: "March 2025",
+    startTime: "Mar 2025",
     endTime: "May 2025",
+  },
+  {
+    title: "Product Saver Extension",
+    description:
+      "Save products instantly. With one click, Product Saver automatically fills in product details so you can save items quickly without manual effort.",
+    image: "./projects/productsaver_extension_screenshot.png",
+    tags: ["HTML", "CSS", "Javascript", "JSON", "Manifold V3"],
+    link: "https://product-store-frontend-six.vercel.app/",
+    github: "https://github.com/FlaBingo/extensions",
+    startTime: "Aug 2025",
+    endTime: "Aug 2025",
+  },
+  {
+    title: "OnlyFriends",
+    description:
+      "A role-based content-sharing platform that allows creators to publish exclusive posts for their fan community.",
+    image: "./projects/onlyfriends_screenshot.png",
+    tags: [
+      "Typescript",
+      "NextJS",
+      "Shadcn",
+      "Server Actions",
+      "PostgreSQL",
+      "Prisma",
+      "Clerk",
+      "UploadThing",
+    ],
+    link: "https://onlyfriends-one.vercel.app/",
+    github: "https://github.com/FlaBingo/NextJS/tree/main/social_app",
+    startTime: "Jun 2025",
+    endTime: "Jun 2025",
+  },
+  {
+    title: "LearnVault",
+    description:
+      "A content resource management web application that let's users create, collab, organize, and share repositories of curated resources (improved learning efficiency by 30%).",
+    image: "./projects/learn_vault_screenshot.png",
+    tags: [
+      "Typescript",
+      "NextJS",
+      "Shadcn",
+      "Server Actions",
+      "PostgreSQL",
+      "Drizzle",
+      "Caching",
+    ],
+    link: "https://learn-vault.vercel.app/",
+    github: "https://github.com/FlaBingo/Learn_Vault",
+    startTime: "Jul 2025",
+    endTime: "Nov 2025",
   },
 ];
 
@@ -47,7 +109,10 @@ const Projects = () => {
             <div
               key={idx}
               className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
-              style={{ animationDelay: `${(idx + 1) * 100}ms`, borderRadius: "1rem" }}
+              style={{
+                animationDelay: `${(idx + 1) * 100}ms`,
+                borderRadius: "1rem",
+              }}
             >
               {/* Image */}
               <div className="relative overflow-hidden aspect-video">
@@ -60,13 +125,22 @@ const Projects = () => {
 
                 {/* Overlay Links */}
                 <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-                  >
-                    <ArrowUpRight className="w-5 h-5" />
-                  </a>
+                  {project.title !== "Product Saver Extension" ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+                    >
+                      <ArrowUpRight className="w-5 h-5" />
+                    </a>
+                  ) : (
+                    <div
+                      className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer"
+                      onClick={handleExtensionNotDeployed}
+                    >
+                      <ArrowUpRight className="w-5 h-5" />
+                    </div>
+                  )}
                   <a
                     href={project.github}
                     target="_blank"
@@ -84,14 +158,21 @@ const Projects = () => {
                     {project.title}
                   </h3>
                   <div className="flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300">
-                    <span>{project.startTime} - {project.endTime}</span>
+                    <span>
+                      {project.startTime} - {project.endTime}
+                    </span>
                     <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
                   </div>
                 </div>
                 <p className="text-muted-foreground">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIdx) => (
-                    <span key={tagIdx} className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300">{tag}</span>
+                    <span
+                      key={tagIdx}
+                      className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
+                    >
+                      {tag}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -100,7 +181,10 @@ const Projects = () => {
         </div>
 
         {/* View All CTA */}
-        <div className="text-center mt-12 animate-fade-in animation-delay-500">
+        <div
+          className="text-center mt-12 animate-fade-in animation-delay-500"
+          onClick={handlePendingWork}
+        >
           <AnimatedBorderButton className="px-2 py-2">
             View All Projects
             <ArrowUpRight className="w-5 h-5" />

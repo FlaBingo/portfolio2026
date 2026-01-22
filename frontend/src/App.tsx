@@ -26,7 +26,7 @@ function App() {
         </main>
         <Footer />
       </div>
-      <Toaster />
+      <Toaster style={{borderRadius: "1rem"}}/>
     </>
   )
 }

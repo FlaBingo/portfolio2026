@@ -29,7 +29,7 @@ const contactInfo = [
   {
     icon: MapPin,
     label: "Location",
-    value: "Walhekarwadi, Chinchwad, Pune, India",
+    value: "Akurdi, Pune, India",
     href: "https://maps.app.goo.gl/EYixgf7Jyd8TBMSb6",
   },
 ];
@@ -223,7 +223,7 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-6 animate-fade-in animation-delay-400">
             <div
-              className="glass rounded-3xl p-8"
+              className="glass rounded-3xl p-8 border border-primary/30"
               style={{ borderRadius: "1.5rem" }}
             >
               <h3 className="text-2xl font-semibold mb-6">
@@ -234,20 +234,22 @@ const Contact = () => {
                   <a
                     key={idx}
                     href={item.href}
-                    className="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition-colors group"
+                    className="flex items-center justify-between gap-4 p-4 rounded-xl hover:bg-surface transition-colors group"
                     style={{ borderRadius: ".5rem" }}
                   >
-                    <div
-                      className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors"
-                      style={{ borderRadius: ".5rem" }}
-                    >
-                      <item.icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="text-sm text-muted-foreground">
-                        {item.label}
+                    <div className="flex items-center gap-4 ">
+                      <div
+                        className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors"
+                        style={{ borderRadius: ".5rem" }}
+                      >
+                        <item.icon className="w-5 h-5 text-primary" />
                       </div>
-                      <div className="font-medium">{item.value}</div>
+                      <div>
+                        <div className="text-sm text-muted-foreground">
+                          {item.label}
+                        </div>
+                        <div className="font-medium">{item.value}</div>
+                      </div>
                     </div>
                     {item.label === "Location" && (
                       <button
@@ -257,10 +259,13 @@ const Contact = () => {
                           e.stopPropagation(); // Prevents the click from reaching the <a>
                           setShowMap((prev) => !prev);
                         }}
-                        className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-all"
-                        style={{ borderRadius: ".5rem" }}
+                        className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-all"
+                        // style={{ borderRadius: ".5rem" }}
                       >
-                        <ChevronDown size={20} className={`${showMap && "rotate-180"} transition-all duration-300`} />
+                        <ChevronDown
+                          size={20}
+                          className={`${showMap && "rotate-180"} transition-all duration-300`}
+                        />
                       </button>
                     )}
                   </a>

@@ -2,12 +2,9 @@
 // import ReactLogo from '../assets/react.svg'; // Add ?react suffix
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 import { Button } from "@/components/ui/button";
+import { handlePendingWork } from "@/lib/devProgress";
 import { socialLinks } from "@/lib/socialLinks";
-import {
-  ArrowRight,
-  ChevronDown,
-  Download,
-} from "lucide-react";
+import { ArrowRight, ChevronDown, Download } from "lucide-react";
 import { useMemo } from "react";
 
 type Dot = {
@@ -46,7 +43,6 @@ const skills = [
   "Git",
   "GitHub Actions",
 ];
-
 
 const Hero = () => {
   const dots = useMemo(() => generateDots(), []);
@@ -117,10 +113,12 @@ const Hero = () => {
                   Contact Me <ArrowRight className="w-5 h-5" />
                 </a>
               </Button>
-              <AnimatedBorderButton>
-                <Download className="w-5 h-5" />
-                Download CV
-              </AnimatedBorderButton>
+              <div onClick={handlePendingWork}>
+                <AnimatedBorderButton>
+                  <Download className="w-5 h-5" />
+                  Download CV
+                </AnimatedBorderButton>
+              </div>
             </div>
 
             {/* Social Links */}
