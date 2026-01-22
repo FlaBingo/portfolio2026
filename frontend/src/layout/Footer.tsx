@@ -1,14 +1,8 @@
 // frontend\src\layout\Footer.tsx
 
-import { socialLinks } from "@/lib/socialLinks";
+import { footerLinks } from "@/data/sectionLinks";
+import { socialLinks } from "@/data/socialLinks";
 
-const footerLinks = [
-  { href: "#hero", label: "Hero" },
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
-  { href: "#testimonials", label: "Testimonials" },
-];
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

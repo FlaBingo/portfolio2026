@@ -3,9 +3,10 @@
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 import { Button } from "@/components/ui/button";
 import { handlePendingWork } from "@/lib/devProgress";
-import { socialLinks } from "@/lib/socialLinks";
+import { socialLinks } from "@/data/socialLinks";
 import { ArrowRight, ChevronDown, Download } from "lucide-react";
 import { useMemo } from "react";
+import { skills } from "@/data/skills";
 
 type Dot = {
   left: string;
@@ -23,26 +24,6 @@ const generateDots = (): Dot[] => {
   }));
 };
 
-const skills = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Node.js",
-  "GraphQL",
-  "PostgreSQL",
-  "MongoDB",
-  "Redis",
-  "Docker",
-  "AWS",
-  "Vercel",
-  "Tailwind CSS",
-  "Prisma",
-  "Jest",
-  "Cypress",
-  "Figma",
-  "Git",
-  "GitHub Actions",
-];
 
 const Hero = () => {
   const dots = useMemo(() => generateDots(), []);
@@ -87,23 +68,26 @@ const Hero = () => {
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Sofware Engineer + Automation Engineer
+                Software + Mechanical
               </span>
             </div>
 
             {/* Headline */}
             <div className="space-y-4">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-                Crafting <span className="text-primary glow-text">digital</span>
-                <br /> experiences with <br />
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in animation-delay-100">
+                Bridging{" "}
+                <span className="text-primary glow-text">Mech Systems{" "}</span>
+                with {" "}
                 <span className="font-serif italic font-normal text-white">
-                  precision.
+                 Intelligent Software.
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, My self Satyam Prajapati - a Software Engineer specializing
-                in React, Next.js, and Typescript. I build scalable, performant
-                web applications that users love.
+                Specializing in Next.js/MERN and Python (DSA), I bridge the gap
+                between physical systems and data-driven logic. I leverage
+                MATLAB/Simulink for system modeling and PostgreSQL to manage
+                high-frequency industrial data, building scalable solutions for
+                the both sectors.
               </p>
             </div>
             {/* CTAs */}
@@ -174,9 +158,15 @@ const Hero = () => {
                   className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500"
                   style={{ borderRadius: ".5rem" }}
                 >
-                  <div className="text-2xl font-bold text-primary">1+</div>
+                  {/* <div className="text-2xl font-bold text-primary">1+</div>
                   <div className="text-xs text-muted-foreground">
                     Years Exp.
+                  </div> */}
+                  <div className="text-xl font-bold text-primary">
+                    Satyam Prajapati
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    BE'27 Mech.
                   </div>
                 </div>
               </div>
