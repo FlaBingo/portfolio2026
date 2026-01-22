@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import {
   AlertCircle,
   CheckCircle,
+  ChevronDown,
   Mail,
   MapPin,
   Phone,
@@ -28,12 +29,14 @@ const contactInfo = [
   {
     icon: MapPin,
     label: "Location",
-    value: "Akurdi, Pune",
-    href: "#",
+    value: "Walhekarwadi, Chinchwad, Pune, India",
+    href: "https://maps.app.goo.gl/EYixgf7Jyd8TBMSb6",
   },
 ];
 
 const Contact = () => {
+  const [showMap, setShowMap] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -86,7 +89,8 @@ const Contact = () => {
       setSubmitStatus({
         type: "error",
         message:
-          (error as Error).message || "Failed to send message. Please try again Later.",
+          (error as Error).message ||
+          "Failed to send message. Please try again Later.",
       });
     } finally {
       setIsLoading(false);
@@ -245,13 +249,41 @@ const Contact = () => {
                       </div>
                       <div className="font-medium">{item.value}</div>
                     </div>
+                    {item.label === "Location" && (
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault(); // Prevents the <a> link from firing
+                          e.stopPropagation(); // Prevents the click from reaching the <a>
+                          setShowMap((prev) => !prev);
+                        }}
+                        className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-all"
+                        style={{ borderRadius: ".5rem" }}
+                      >
+                        <ChevronDown size={20} className={`${showMap && "rotate-180"} transition-all duration-300`} />
+                      </button>
+                    )}
                   </a>
                 ))}
+
+                {showMap && (
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d12534.062892316842!2d73.76465681557967!3d18.637013910439638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1769012213180!5m2!1sen!2sin"
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-80 animate-fade-in"
+                    style={{ border: "0", borderRadius: ".5rem" }}
+                  ></iframe>
+                )}
               </div>
             </div>
 
             {/* Availability Card */}
-            <div className="glass rounded-3xl p-8 border border-primary/30" style={{ borderRadius: "1.5rem" }}>
+            <div
+              className="glass rounded-3xl p-8 border border-primary/30"
+              style={{ borderRadius: "1.5rem" }}
+            >
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                 <span className="font-medium">Currently Available</span>
