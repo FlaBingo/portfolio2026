@@ -4,10 +4,10 @@
 export const experiences = [
   {
     period: "Jan 2026 - Feb 2026",
-    title: "Tara Tools, Bhosari, Pune",
+    title: "Internship at Tara Tools, Bhosari, Pune",
     subtitle: "Design, Manufacturing, and Quality Control Department",
     description:
-      `During my internship at Tara Tools, I focused on the Design department's digital workflow for complex BIW and checking/welding fixtures. I analyzed how CATIA and NX architect high-precision models that ensure robotic accessibility and geometric accuracy. I observed how industrial planning transforms these designs into "software-defined blueprints" that drive automated CNC manufacturing. This provided a deep dive into Model-Based Definition, where digital design dictates every phase of shop-floor execution. I leveraged this to bridge mechanical precision with software logic, forming the foundation for the Digital Twin systems I build.`,
+      `During my Internship at Tara Tools, I focused on the Design department's digital workflow for complex BIW and checking/welding fixtures. I analyzed how CATIA and NX architect high-precision models that ensure robotic accessibility and geometric accuracy. I observed how industrial planning transforms these designs into "software-defined blueprints" that drive automated CNC manufacturing. This provided a deep dive into Model-Based Definition, where digital design dictates every phase of shop-floor execution. I leveraged this to bridge mechanical precision with software logic, forming the foundation for the Digital Twin systems I build.`,
     tags: ["CATIA", "Siemens NX", "GD&T", "Process Planning", "Industrial Workflow"],
     current: true,
   },

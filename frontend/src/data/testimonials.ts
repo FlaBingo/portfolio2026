@@ -2,11 +2,12 @@
 export const testimonials = [
   {
     quote:
-      "Satyam is one of the most talented engineers I've worked with. His attention to detail and ability to translate complex requirements into elegant solutions is remarkable.",
-    author: "Sarah Chen",
-    role: "CTO, Tech Innovators Inc.",
+      "Satyam served as a highly responsible technical lead for the development team during the Smart India Hackathon. He took full ownership of the project's technical architecture, ensuring the build remained on track despite high-pressure constraints.",
+    author: "Akshay Darekar",
+    role: "Aspiring Software Engineer | JLPT N5",
     avatar:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
+      "./testimonials/akshay_darekar.jpeg",
+    link: "https://www.linkedin.com/in/akshay-darekar52/"
   },
   {
     quote:
@@ -15,6 +16,7 @@ export const testimonials = [
     role: "Product Manager, Digital Solutions",
     avatar:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
+    link: ""
   },
   {
     quote:
@@ -23,6 +25,7 @@ export const testimonials = [
     role: "Engineering Lead, StartUp Labs",
     avatar:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop",
+    link: ""
   },
   {
     quote:
@@ -31,5 +34,6 @@ export const testimonials = [
     role: "CEO, Innovation Hub",
     avatar:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
+    link: ""
   },
 ];

@@ -40,7 +40,7 @@ const Testimonials = () => {
             {/* Main Testimonial */}
             <div
               className="glass p-8 rounded-3xl md:p-12 glow-border animate-fade-in animation-delay-200"
-              style={{ borderRadius: "2rem" }}
+              style={{ borderRadius: "1.5rem" }}
             >
               <div className="absolute -top-4 left-8 w-12 h-12 rounded-full bg-primary flex items-center justify-center">
                 <Quote className="w-6 h-6 text-primary-foreground" />
@@ -48,7 +48,7 @@ const Testimonials = () => {
               <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-8 pt-4">
                 "{testimonials[activeIdx].quote}"
               </blockquote>
-              <div className="flex items-center gap-4">
+              <a className="inline-flex items-center gap-4" href={testimonials[activeIdx].link} target="_blank">
                 <img
                   src={testimonials[activeIdx].avatar}
                   alt={testimonials[activeIdx].author}
@@ -60,7 +60,7 @@ const Testimonials = () => {
                     {testimonials[activeIdx].role}
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
 
             {/* Testimonials Navigation */}
